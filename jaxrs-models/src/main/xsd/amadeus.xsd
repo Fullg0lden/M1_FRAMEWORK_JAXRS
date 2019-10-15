@@ -43,28 +43,45 @@
 			<xsd:element name="DureeVol" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:simpleType name="IATA">
-		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="[A-Z]{3}"></xsd:pattern>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:complexType name="ASs">
+
+	<xsd:complexType name="QuickSalesRequest">
 		<xsd:sequence>
-			<xsd:element name="AS" minOccurs="1" maxOccurs="3">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element name="klass" type="xsd:string" />
-						<xsd:element name="seat">
-							<xsd:simpleType>
-								<xsd:restriction base="xsd:int">
-									<xsd:minExclusive value="0"></xsd:minExclusive>
-									<xsd:maxInclusive value="9"></xsd:maxInclusive>
-								</xsd:restriction>
-							</xsd:simpleType>
-						</xsd:element>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
+			<xsd:element name="numSeat" type="xsd:integer" />
+			<xsd:element name="klass" type="KlassType" />
+			<xsd:element name="lineNumber" type="xsd:integer" />
 		</xsd:sequence>
 	</xsd:complexType>
+
+	<xsd:simpleType name="KlassType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y"></xsd:enumeration>
+			<xsd:enumeration value="J"></xsd:enumeration>
+			<xsd:enumeration value="P"></xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+		<xsd:simpleType name="IATA">
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z]{3}"></xsd:pattern>
+			</xsd:restriction>
+		</xsd:simpleType>
+		<xsd:complexType name="ASs">
+			<xsd:sequence>
+				<xsd:element name="AS" minOccurs="1" maxOccurs="3">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="klass" type="xsd:string" />
+							<xsd:element name="seat">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:int">
+										<xsd:minExclusive value="0"></xsd:minExclusive>
+										<xsd:maxInclusive value="9"></xsd:maxInclusive>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
 </xsd:schema>
