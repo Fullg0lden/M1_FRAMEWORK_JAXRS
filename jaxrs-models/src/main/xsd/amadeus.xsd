@@ -72,6 +72,7 @@
 
 	<xsd:complexType name="TSTResponse">
 		<xsd:sequence>
+			<xsd:element name="tst" type="TST" />
 			<xsd:element name="passenger" type="xsd:string" />
 			<xsd:element name="price" type="xsd:decimal" />
 			<xsd:element name="fee" type="xsd:decimal" />
@@ -84,12 +85,29 @@
 			<xsd:element name="passenger" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
-
-	<xsd:complexType name="FXPResponse">
+	
+	<xsd:complexType name="TQTRequest">
 		<xsd:sequence>
+			<xsd:element name="AN" type="AvailabilityNeutralResponse" />
 			<xsd:element name="passenger" type="xsd:string" />
-			<xsd:element name="price" type="xsd:decimal" />
-			<xsd:element name="fee" type="xsd:decimal" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="TTPRequest">
+		<xsd:sequence>
+			<xsd:element name="tst" type="TST" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="TKTRequest">
+		<xsd:sequence>
+			<xsd:element name="tst" type="TST" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="TTERequest">
+		<xsd:sequence>
+			<xsd:element name="tst" type="TST" />
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -98,6 +116,12 @@
 			<xsd:enumeration value="Y"></xsd:enumeration>
 			<xsd:enumeration value="J"></xsd:enumeration>
 			<xsd:enumeration value="P"></xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="TST">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9]{8}"></xsd:pattern>
 		</xsd:restriction>
 	</xsd:simpleType>
 
