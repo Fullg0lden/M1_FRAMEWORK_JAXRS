@@ -20,12 +20,14 @@ import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import com.sun.research.ws.wadl.Option;
+import com.sun.xml.bind.v2.schemagen.episode.Klass;
 
 import fr.pantheonsorbonne.ufr27.miage.ASs;
 import fr.pantheonsorbonne.ufr27.miage.ASs.AS;
 import fr.pantheonsorbonne.ufr27.miage.AvailabilityNeutralResponse;
 import fr.pantheonsorbonne.ufr27.miage.AvailabilityNeutralResponses;
 import fr.pantheonsorbonne.ufr27.miage.ObjectFactory;
+import fr.pantheonsorbonne.ufr27.miage.QuickSalesResponses;
 import fr.pantheonsorbonne.ufr27.miage.business.AmadeusBusiness;
 import fr.pantheonsorbonne.ufr27.miage.exceptions.DateParseException;
 import fr.pantheonsorbonne.ufr27.miage.utils.Utils;
@@ -84,6 +86,5 @@ public class AvailabilityEndpoint {
 
 		return responses;
 
-	}
-
+	}	
 }

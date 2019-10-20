@@ -65,7 +65,16 @@
 
 	<xsd:complexType name="QuickSalesResponse">
 		<xsd:sequence>
-			<xsd:element name="AN" type="AvailabilityNeutralResponse" />
+			<xsd:element name="identifiantVolReponse"
+				type="xsd:string" />
+			<xsd:element name="identifiantCompanie" type="xsd:string" />
+			<xsd:element name="identifiantVol" type="xsd:string" />
+			<xsd:element name="nbPlacesRestantes" type="ASs" />
+			<xsd:element name="origine" type="IATA" />
+			<xsd:element name="destination" type="IATA" />
+			<xsd:element name="heureDepart" type="xsd:dateTime" />
+			<xsd:element name="heureArrivee" type="xsd:dateTime" />
+			<xsd:element name="DureeVol" type="xsd:string" />
 			<xsd:element name="HK" type="xsd:integer" />
 		</xsd:sequence>
 	</xsd:complexType>
